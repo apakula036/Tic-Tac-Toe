@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhd2mcrjw51lx"]
+
+[ext_resource type="Script" uid="uid://b20wcftb1seba" path="res://scenes/gamemain.gd" id="1_sxy2r"]
+[ext_resource type="Texture2D" uid="uid://crnjl73sth8i" path="res://images/6_Overpass_Spring (2).jpg" id="2_weo5b"]
+[ext_resource type="AudioStream" uid="uid://b326b11j04cyc" path="res://audio/Limp Bizkit - Turn It Up, Bitch.mp3" id="2_wji10"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wji10"]
+texture = ExtResource("2_weo5b")
+modulate_color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m342b"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 4
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agfnh"]
+bg_color = Color(0.27387273, 0.27387276, 0.27387264, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxo44"]
+bg_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nkd1t"]
+
+[node name="Gamemain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sxy2r")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("2_wji10")
+autoplay = true
+playback_type = 1
+parameters/looping = true
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -322.0
+offset_right = 577.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wji10")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.5
+offset_top = -63.0
+offset_right = 222.5
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="onebutton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_m342b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_agfnh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rxo44")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nkd1t")
+text = "One button"
+
+[node name="twobutton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_m342b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_agfnh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rxo44")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nkd1t")
+text = "Two button"
+
+[node name="threebutton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_m342b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_agfnh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rxo44")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nkd1t")
+text = "Three button"
+
+[connection signal="pressed" from="Control/VBoxContainer/onebutton" to="." method="_on_onebutton_pressed"]

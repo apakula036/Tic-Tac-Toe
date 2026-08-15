@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dl4mtpplaardw"]
+
+[ext_resource type="Texture2D" uid="uid://nx3iiabdj6jr" path="res://assets/tictactoeboard.png" id="1_bw3vb"]
+
+[node name="Board" type="Sprite2D" unique_id=347624596]
+position = Vector2(442, 339)
+texture = ExtResource("1_bw3vb")
