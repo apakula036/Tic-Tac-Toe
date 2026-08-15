@@ -27,5 +27,7 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			#check if mouse is on game board 
 			if event.position.x < board_size2:
-				print(event.position)
+				#convert mouse pos into a grid location
+				grid_pos = Vector2i(event.position / cell_size)
+				print(grid_pos)
 				

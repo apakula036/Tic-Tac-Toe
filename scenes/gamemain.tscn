@@ -36,6 +36,6 @@ playback_type = 1
 parameters/looping = true
 
 [node name="Board" parent="." unique_id=347624596 instance=ExtResource("3_weo5b")]
-position = Vector2(401.99997, 325.24997)
-scale = Vector2(0.9090909, 0.9025246)
+position = Vector2(401.99997, 388.24997)
+scale = Vector2(0.9090909, 1.0792427)
 script = SubResource("GDScript_wji10")
