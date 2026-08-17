@@ -14,3 +14,9 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# ignore audio files
+res://audio/$UICIDEBOY$ - Audubon.mp3
+res://audio/Limp Bizkit - Turn It Up, Bitch.mp3
+C:/Users/Andrew/Documents/tic-tac-toe/audio/$UICIDEBOY$ - Audubon.mp3
+C:/Users/Andrew/Documents/tic-tac-toe/audio/Limp Bizkit - Turn It Up, Bitch.mp3

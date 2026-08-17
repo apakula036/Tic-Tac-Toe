@@ -1,5 +1,7 @@
 extends Control
 
+@export var circle_scene : PackedScene
+@export var x_scene : PackedScene
 var testArray = [
 	"test1",
 	"test2"
@@ -21,6 +23,7 @@ func _ready():
 	cell_size = board_size2 / 3
 	print(cell_size)
 	new_game()
+	
 func _process(delta):
 	pass
 
@@ -32,10 +35,15 @@ func _input(event):
 			if event.position.x < board_size2:
 				#convert mouse pos into a grid location
 				grid_pos = Vector2i(event.position / cell_size)
-				print(grid_pos)
-				grid_data[grid_pos.y][grid_pos.x] = player 
-				player *= -1
-				print(grid_data)
+				if grid_data[grid_pos.y][grid_pos.x] == 0 :
+					print(grid_pos)
+					grid_data[grid_pos.y][grid_pos.x] = player 
+					#place the players marker
+					create_marker(player, grid_pos * cell_size + Vector2i(cell_size / 2, cell_size /2))
+					player *= -1
+					print(grid_data)
+				else :
+					print("Piece already there")
 				
 
 func new_game():
@@ -45,3 +53,14 @@ func new_game():
 		[0, 0, 0],
 		[0, 0, 0]
 		]
+
+func create_marker(player, position) : 
+	#create a marker node and add it as a child 
+	if player == 1:
+		var circle = circle_scene.instantiate()
+		circle.position = position
+		add_child(circle)
+	else: 
+		var cross = x_scene.instantiate()
+		cross.position = position
+		add_child(cross)

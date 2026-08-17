@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bhd2mcrjw51lx"]
 
 [ext_resource type="Script" uid="uid://b20wcftb1seba" path="res://scripts/gamemain.gd" id="1_sxy2r"]
+[ext_resource type="PackedScene" uid="uid://d2emouqmbn15g" path="res://scenes/O.tscn" id="2_m342b"]
 [ext_resource type="AudioStream" uid="uid://b326b11j04cyc" path="res://audio/Limp Bizkit - Turn It Up, Bitch.mp3" id="2_wji10"]
+[ext_resource type="PackedScene" uid="uid://ci2k34aekggf" path="res://scenes/X.tscn" id="3_m342b"]
 [ext_resource type="PackedScene" uid="uid://dl4mtpplaardw" path="res://scenes/board.tscn" id="3_weo5b"]
 
 [sub_resource type="GDScript" id="GDScript_wji10"]
@@ -14,6 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxy2r")
+circle_scene = ExtResource("2_m342b")
+x_scene = ExtResource("3_m342b")
 
 [node name="Control" type="Control" parent="." unique_id=476485925]
 layout_mode = 1
@@ -36,6 +40,6 @@ playback_type = 1
 parameters/looping = true
 
 [node name="Board" parent="." unique_id=347624596 instance=ExtResource("3_weo5b")]
-position = Vector2(401.99997, 340.75)
-scale = Vector2(0.9090909, 0.94600296)
+position = Vector2(380, 340.75)
+scale = Vector2(0.85909086, 0.94600296)
 script = SubResource("GDScript_wji10")
