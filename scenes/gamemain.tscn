@@ -8,11 +8,14 @@
 
 [sub_resource type="GDScript" id="GDScript_wji10"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m342b"]
+
 [node name="Gamemain" type="Control" unique_id=1647517812]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 43.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxy2r")
@@ -40,6 +43,20 @@ playback_type = 1
 parameters/looping = true
 
 [node name="Board" parent="." unique_id=347624596 instance=ExtResource("3_weo5b")]
-position = Vector2(380, 340.75)
-scale = Vector2(0.85909086, 0.94600296)
+position = Vector2(359.00003, 340.75)
+scale = Vector2(0.8113637, 0.94600296)
 script = SubResource("GDScript_wji10")
+
+[node name="SidePanel" type="Panel" parent="." unique_id=1509625026]
+custom_minimum_size = Vector2(200, 600)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_right = -45.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m342b")
