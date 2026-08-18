@@ -9,6 +9,22 @@
 [sub_resource type="GDScript" id="GDScript_wji10"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m342b"]
+bg_color = Color(0.35044113, 0.6701354, 0.5868734, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.7121294, 0.7121294, 0.7121291, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 
 [node name="Gamemain" type="Control" unique_id=1647517812]
 layout_mode = 3
@@ -54,9 +70,29 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -305.0
-offset_right = -45.0
-offset_bottom = -1.0
+offset_left = -307.0
+offset_top = 4.0
+offset_right = -47.0
+offset_bottom = 3.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_m342b")
+
+[node name="PlayerLabel" type="Label" parent="." unique_id=1848114352]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 100.0
+offset_right = 976.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 40
+text = "Next Player: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerPanel" type="Panel" parent="." unique_id=1109532865]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 182.0
+offset_right = 942.0
+offset_bottom = 382.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhunq")
