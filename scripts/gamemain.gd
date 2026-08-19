@@ -50,6 +50,9 @@ func _input(event):
 					create_marker(player, grid_pos * cell_size + Vector2i(cell_size / 2, cell_size /2))
 					if check_win()!= 0:
 						print("Game over")
+						get_tree().paused = true
+						$GameOverMenu.show()
+						
 					
 					player *= -1
 					#update panel marker
@@ -72,6 +75,7 @@ func new_game():
 		]
 	#create a marker to show starting player
 	create_marker(player, player_panel_pos + Vector2i(cell_size / 2, cell_size / 2), true)
+	$GameOverMenu.hide()
 
 func create_marker(player, position, temp=false) : 
 	#create a marker node and add it as a child 
@@ -99,3 +103,7 @@ func check_win() :
 		elif row_sum == -3 or column_sum == -3 or diagonal1_sum == -3 or diagonal2_sum == -3:
 			winner = -1
 	return winner
+
+
+func _on_game_over_menu_restart() :
+	pass # Replace with function body.

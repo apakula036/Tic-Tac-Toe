@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://b326b11j04cyc" path="res://audio/Limp Bizkit - Turn It Up, Bitch.mp3" id="2_wji10"]
 [ext_resource type="PackedScene" uid="uid://ci2k34aekggf" path="res://scenes/X.tscn" id="3_m342b"]
 [ext_resource type="PackedScene" uid="uid://dl4mtpplaardw" path="res://scenes/board.tscn" id="3_weo5b"]
+[ext_resource type="PackedScene" uid="uid://mxmgxl8qsf6l" path="res://scenes/game_over_menu.tscn" id="6_agfnh"]
 
 [sub_resource type="GDScript" id="GDScript_wji10"]
 
@@ -96,3 +97,7 @@ offset_top = 182.0
 offset_right = 942.0
 offset_bottom = 382.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhunq")
+
+[node name="GameOverMenu" parent="." unique_id=798387005 instance=ExtResource("6_agfnh")]
+
+[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]
