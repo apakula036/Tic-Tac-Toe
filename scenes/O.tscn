@@ -2,6 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://csfykvkoc3m47" path="res://assets/o.png" id="1_esk27"]
 
-[node name="O" type="Sprite2D" unique_id=809777248]
+[node name="O" type="Sprite2D" unique_id=809777248 groups=["Circles"]]
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_esk27")

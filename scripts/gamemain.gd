@@ -2,10 +2,7 @@ extends Control
 
 @export var circle_scene : PackedScene
 @export var x_scene : PackedScene
-var testArray = [
-	"test1",
-	"test2"
-]
+
 var grid_data : Array
 var player : int
 var winner : int
@@ -73,9 +70,17 @@ func new_game():
 		[0, 0, 0],
 		[0, 0, 0]
 		]
+	var column_sum = 0
+	var diagonal1_sum = 0
+	var diagonal2_sum = 0
+	var row_sum = 0
+	#clear exisitng markers
+	get_tree().call_group("Circles", "queue_free")
+	get_tree().call_group("Crosses", "queue_free")
 	#create a marker to show starting player
 	create_marker(player, player_panel_pos + Vector2i(cell_size / 2, cell_size / 2), true)
 	$GameOverMenu.hide()
+	get_tree().paused = false
 
 func create_marker(player, position, temp=false) : 
 	#create a marker node and add it as a child 
@@ -106,4 +111,4 @@ func check_win() :
 
 
 func _on_game_over_menu_restart() :
-	pass # Replace with function body.
+	new_game()

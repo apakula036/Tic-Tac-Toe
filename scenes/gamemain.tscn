@@ -99,5 +99,6 @@ offset_bottom = 382.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhunq")
 
 [node name="GameOverMenu" parent="." unique_id=798387005 instance=ExtResource("6_agfnh")]
+process_mode = 2
 
 [connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]

@@ -23,6 +23,11 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=980
 
+[global_group]
+
+Circles=""
+Crosses=""
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
